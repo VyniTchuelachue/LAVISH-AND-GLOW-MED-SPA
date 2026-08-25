@@ -18,6 +18,19 @@
     });
   }
 
+  var mapFacade = document.getElementById('mapFacade');
+  if (mapFacade) {
+    mapFacade.addEventListener('click', function () {
+      var iframe = document.createElement('iframe');
+      iframe.className = 'map-embed';
+      iframe.loading = 'lazy';
+      iframe.referrerPolicy = 'no-referrer-when-downgrade';
+      iframe.title = 'Carte vers Lavish Shape & Glow Med Spa';
+      iframe.src = 'https://www.google.com/maps?q=4.0222705,9.6978913&z=16&output=embed';
+      mapFacade.replaceWith(iframe);
+    });
+  }
+
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
