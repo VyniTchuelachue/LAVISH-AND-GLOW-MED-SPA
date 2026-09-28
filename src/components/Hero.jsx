@@ -2,48 +2,50 @@ import { BOOKING, WHATSAPP } from '../constants';
 
 export default function Hero() {
   return (
-    <section className="relative bg-paper dark:bg-dbg pt-[128px] pb-16 md:pt-[150px] md:pb-24 overflow-hidden" id="top">
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.06] dark:opacity-[0.08]"
-        style={{
-          backgroundImage: 'repeating-linear-gradient(120deg, currentColor 0, currentColor 1px, transparent 1px, transparent 64px)',
-          color: 'var(--color-ink)',
-        }}
-      />
+    <section className="relative min-h-[100svh] flex items-end overflow-hidden bg-ink" id="top">
+      <div className="absolute inset-0">
+        <img
+          src="/images/exterior.jpg"
+          alt="Façade de Lavish Shape & Glow Med Spa à Bonapriso, Douala"
+          width="540"
+          height="341"
+          fetchpriority="high"
+          decoding="async"
+          className="w-full h-full object-cover scale-[1.06] motion-safe:animate-[hero-zoom_18s_ease-out_forwards]"
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(180deg, rgba(15,13,10,0.55) 0%, rgba(15,13,10,0.25) 32%, rgba(15,13,10,0.78) 100%), linear-gradient(90deg, rgba(15,13,10,0.55) 0%, rgba(15,13,10,0.05) 45%)',
+          }}
+        />
+      </div>
 
-      <div className="relative max-w-[1180px] mx-auto px-5 sm:px-8 grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-16 items-center">
-        <div className="order-2 lg:order-1">
-          <span className="eyebrow">Bonapriso, Douala</span>
-          <h1 className="mt-5 text-[clamp(40px,7vw,72px)] leading-[1.05] text-ink-soft dark:text-dtext max-w-[15ch]">
-            Sculptez votre silhouette,{' '}
-            <em className="italic text-brass-deep dark:text-brass-light">révélez</em> votre éclat.
-          </h1>
-          <p className="mt-6 max-w-[48ch] text-base md:text-lg text-stone dark:text-dmuted">
-            Le tout premier centre de fitness et d'esthétique médicale du Cameroun — où la technologie clinique
-            rencontre le soin haute couture, séance après séance.
-          </p>
-          <div className="flex flex-wrap gap-4 mt-9">
-            <a href={BOOKING} target="_blank" rel="noopener noreferrer" className="btn btn-brass">
-              Réserver une séance
-            </a>
-            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="btn btn-line">
-              Discuter sur WhatsApp
-            </a>
-          </div>
+      <div className="relative z-[2] w-full max-w-[1180px] mx-auto px-8 pt-[200px] pb-24 md:pb-32 text-white">
+        <span className="eyebrow text-gold-light">Bonapriso, Douala</span>
+        <h1 className="text-[clamp(36px,10vw,84px)] leading-[1.12] text-white mt-5 mb-6 max-w-[16ch]">
+          Sculptez votre silhouette.
+          <br />
+          Révélez votre <em className="italic text-gold-light">éclat.</em>
+        </h1>
+        <p className="max-w-[46ch] text-base md:text-lg text-white/85 mb-10">
+          Le tout premier centre de fitness et d'esthétique médicale du Cameroun — où la technologie clinique
+          rencontre le soin haute couture, séance après séance.
+        </p>
+        <div className="flex flex-wrap gap-4">
+          <a href={BOOKING} target="_blank" rel="noopener noreferrer" className="btn btn-gold flex-1 sm:flex-none">
+            Réserver une séance
+          </a>
+          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="btn btn-line flex-1 sm:flex-none">
+            Discuter sur WhatsApp
+          </a>
         </div>
+      </div>
 
-        <div className="order-1 lg:order-2 relative">
-          <div className="absolute -inset-3 border border-brass/40 dark:border-brass-light/25 rounded-sm hidden sm:block" />
-          <img
-            src="/images/exterior.jpg"
-            alt="Façade de Lavish Shape & Glow Med Spa à Bonapriso, Douala"
-            width="1600"
-            height="900"
-            fetchPriority="high"
-            decoding="async"
-            className="relative w-full h-auto aspect-[4/3] object-cover rounded-sm shadow-[0_30px_60px_-20px_rgba(15,30,34,0.35)]"
-          />
-        </div>
+      <div className="hidden md:flex absolute right-10 bottom-10 z-[2] [writing-mode:vertical-rl] text-white/75 text-[11px] tracking-[0.2em] uppercase items-center gap-3.5">
+        Découvrir
+        <span className="w-px h-[46px] bg-white/50 block" />
       </div>
     </section>
   );

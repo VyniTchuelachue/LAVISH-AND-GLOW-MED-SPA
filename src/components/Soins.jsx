@@ -4,80 +4,62 @@ const TREATMENTS = [
   {
     index: '01 — Le soin plébiscité',
     title: 'Épilation au laser',
-    img: '/images/soin-laser-hair-removal.jpg',
-    alt: "Séance d'épilation au laser en cabine",
-    w: 1400,
-    h: 1050,
-    text: "Notre technologie laser dernière génération, encadrée par une équipe formée aux protocoles les plus récents — la séance la plus demandée de l'institut.",
+    img: '/images/treatment-room-blue.jpg',
+    alt: "Cabine laser bleu apaisant pour l'épilation au laser",
+    w: 866,
+    h: 1278,
+    objectPosition: '50% 80%',
+    text: "Notre cabine laser, habillée de bleu apaisant, accueille nos séances d'épilation les plus demandées — encadrées par une équipe formée aux technologies laser dernière génération.",
     quote: "« Les résultats de mes séances d'épilation au laser m'ont véritablement impressionnée. »",
     quoteCite: '— Lynn Mbock, avis Google',
   },
   {
-    index: '02 — Visage & fermeté',
-    title: 'Soins anti-âge',
-    img: '/images/soin-anti-aging.jpg',
-    alt: 'Soin du visage anti-âge en cabine',
-    w: 1400,
-    h: 933,
+    index: '02 — Visage & éclat',
+    title: 'Soins du visage & anti-âge',
+    img: '/images/treatment-room-white.jpg',
+    alt: 'Cabine de soins du visage avec appareil professionnel',
+    w: 1075,
+    h: 605,
     reverse: true,
-    text: 'Protocoles ciblés contre les rides et le relâchement cutané — mésothérapie, radiofréquence et soins raffermissants sur mesure.',
+    text: 'Hydrafacial, mésothérapie et protocoles anti-âge sur mesure, réalisés dans une cabine dédiée entièrement équipée pour les soins de peau les plus pointus.',
   },
   {
-    index: '03 — Peau nette & éclat',
-    title: 'Soins du visage',
-    img: '/images/soin-clear-skin.jpg',
-    alt: 'Soin du visage pour une peau nette',
-    w: 1400,
-    h: 933,
-    text: "Hydrafacial et nettoyage en profondeur pour traiter l'acné, les taches et le teint terne, avec un protocole adapté à chaque type de peau.",
+    index: '03 — Corps & détente',
+    title: 'Massages & remodelage corporel',
+    img: '/images/spa-suite.jpg',
+    alt: 'Suite de massage avec deux lits, bougies et coquillages',
+    w: 1080,
+    h: 1072,
+    text: 'Notre suite double — bougies, coquillages, huiles chaudes — accueille massages relaxants, drainage lymphatique et protocoles de remodelage de la silhouette (pressothérapie, cavitation, liposuccion laser).',
   },
   {
-    index: '04 — Silhouette',
-    title: 'Remodelage corporel',
-    img: '/images/soin-body-contouring.jpg',
-    alt: 'Soin de remodelage corporel',
-    w: 1400,
-    h: 933,
-    reverse: true,
-    text: 'Pressothérapie, cavitation et liposuccion laser pour redessiner la silhouette, en complément de nos protocoles de drainage.',
-  },
-  {
-    index: '05 — Détente',
-    title: 'Massages & bien-être',
-    img: '/images/soin-massage.jpg',
-    alt: 'Massage relaxant en cabine',
-    w: 1400,
-    h: 933,
-    text: 'Massages relaxants et drainage lymphatique dans notre suite double — bougies, huiles chaudes, ambiance feutrée.',
-  },
-];
-
-const EXTRAS = [
-  {
+    index: '04 — Pieds & mains',
     title: 'Rituel pédicure & manucure',
     img: '/images/pedicure-chairs.jpg',
     alt: 'Fauteuils en bois du salon pédicure et manucure',
     w: 1076,
     h: 1058,
-    text: 'Un salon privé pensé pour les rituels pieds et mains, à l\'écart de l\'agitation.',
+    reverse: true,
+    text: 'Un salon privé, à l\'écart, pensé pour les rituels pieds et mains — deux fauteuils en bois massif, dans une ambiance feutrée loin de l\'agitation.',
   },
   {
+    index: '05 — Sur mesure',
     title: 'Consultation & soins vaginaux',
     img: '/images/products-room.jpg',
     alt: 'Comptoir de consultation et de produits de soin',
     w: 1080,
     h: 616,
-    text: 'Traitement des vergetures et rajeunissement vaginal, en toute confidentialité, après consultation.',
+    text: 'Chaque parcours démarre par une consultation au comptoir produits, y compris pour nos soins les plus intimes — traitement des vergetures et rajeunissement vaginal, en toute confidentialité.',
   },
 ];
 
 export default function Soins() {
   return (
-    <section className="bg-paper dark:bg-dbg py-20 md:py-28" id="soins">
+    <section className="bg-marble dark:bg-dbg py-24 md:py-32" id="soins">
       <div className="max-w-[1180px] mx-auto px-5 sm:px-8">
         <Reveal className="max-w-[640px] mb-14">
           <span className="eyebrow">Nos soins</span>
-          <h2 className="text-[clamp(32px,4vw,48px)] mt-4.5 italic">Des soins signature, cabine par cabine.</h2>
+          <h2 className="text-[clamp(32px,4vw,46px)] mt-4.5">Des soins signature, cabine par cabine.</h2>
           <p className="mt-4.5 text-[17px] text-stone dark:text-dmuted max-w-[52ch]">
             Chaque programme est mené dans sa propre cabine, avec l'équipement dédié à sa spécialité — sur
             rendez-vous, après une consultation personnalisée.
@@ -95,15 +77,16 @@ export default function Soins() {
                   height={t.h}
                   loading="lazy"
                   decoding="async"
-                  className="rounded-sm w-full h-auto aspect-[4/3.2] object-cover"
+                  style={t.objectPosition ? { objectPosition: t.objectPosition } : undefined}
+                  className="rounded-sm w-full h-auto aspect-[4/3.1] object-cover"
                 />
               </div>
               <div>
-                <span className="font-display italic text-base text-brass-deep dark:text-brass-light">{t.index}</span>
-                <h3 className="text-[clamp(24px,2.6vw,32px)] mt-2">{t.title}</h3>
+                <span className="font-display text-[13px] tracking-wide text-gold-deep dark:text-gold-light">{t.index}</span>
+                <h3 className="text-[clamp(24px,2.6vw,30px)] mt-2.5">{t.title}</h3>
                 <p className="text-stone dark:text-dmuted text-base mt-4">{t.text}</p>
                 {t.quote && (
-                  <blockquote className="mt-5 pl-4.5 border-l-2 border-brass font-display italic text-lg">
+                  <blockquote className="mt-5 pl-4.5 border-l-2 border-gold font-display italic text-[15px]">
                     {t.quote}
                     <cite className="block mt-2 font-body not-italic text-xs tracking-wide uppercase text-stone dark:text-dmuted">
                       {t.quoteCite}
@@ -114,26 +97,6 @@ export default function Soins() {
             </Reveal>
           ))}
         </div>
-
-        <Reveal className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-16 md:mt-24 pt-16 md:pt-20 border-t border-ink/10 dark:border-white/10">
-          {EXTRAS.map((e) => (
-            <div key={e.title} className="flex gap-5 items-center">
-              <img
-                src={e.img}
-                alt={e.alt}
-                width={e.w}
-                height={e.h}
-                loading="lazy"
-                decoding="async"
-                className="w-24 h-24 sm:w-28 sm:h-28 rounded-sm object-cover flex-shrink-0"
-              />
-              <div>
-                <h4 className="font-display italic text-xl">{e.title}</h4>
-                <p className="text-sm text-stone dark:text-dmuted mt-1.5">{e.text}</p>
-              </div>
-            </div>
-          ))}
-        </Reveal>
       </div>
     </section>
   );

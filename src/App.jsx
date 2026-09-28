@@ -1,8 +1,8 @@
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Reviews from './components/Reviews';
-import Soins from './components/Soins';
 import About from './components/About';
+import Soins from './components/Soins';
 import Ambiance from './components/Ambiance';
 import Visit from './components/Visit';
 import Footer from './components/Footer';
@@ -15,8 +15,8 @@ export default function App() {
       <main>
         <Hero />
         <Reviews />
-        <Soins />
         <About />
+        <Soins />
         <Ambiance />
         <Visit />
       </main>

@@ -1,6 +1,6 @@
 export function IconCheck(props) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.8" className="stroke-brass-deep dark:stroke-brass-light w-3.5 h-3.5" {...props}>
+    <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.8" className="stroke-gold-deep dark:stroke-gold-light w-3.5 h-3.5" {...props}>
       <path d="M20 6L9 17l-5-5" />
     </svg>
   );
@@ -8,7 +8,7 @@ export function IconCheck(props) {
 
 export function IconStar(props) {
   return (
-    <svg viewBox="0 0 20 20" className="fill-brass-deep dark:fill-brass-light w-[15px] h-[15px]" {...props}>
+    <svg viewBox="0 0 20 20" className="fill-gold-deep dark:fill-gold-light w-[15px] h-[15px]" {...props}>
       <path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z" />
     </svg>
   );

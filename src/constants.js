@@ -9,8 +9,8 @@ export const INSTAGRAM = 'https://www.instagram.com/lavishcmr_medspa/';
 export const FACEBOOK = 'https://www.facebook.com/LavishmedspaLSG/';
 
 export const NAV_LINKS = [
-  { href: '#soins', label: 'Soins' },
   { href: '#apropos', label: "L'institut" },
+  { href: '#soins', label: 'Soins' },
   { href: '#avis', label: 'Avis' },
   { href: '#visiter', label: 'Nous trouver' },
 ];

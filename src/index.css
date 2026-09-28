@@ -1,26 +1,25 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #0f1e22;
-  --color-ink-soft: #16292e;
-  --color-paper: #f3eee1;
-  --color-paper-deep: #e9e1cc;
-  --color-brass: #bd8a4a;
-  --color-brass-light: #e0b878;
-  --color-brass-deep: #8a5e28;
-  --color-teal: #2f6b6e;
-  --color-teal-deep: #1f4a4c;
-  --color-teal-tint: #d9e8e6;
-  --color-stone: #766f60;
+  --color-ink: #14181f;
+  --color-ink-soft: #23262e;
+  --color-marble: #f8f5f0;
+  --color-marble-deep: #efe9df;
+  --color-gold: #b99457;
+  --color-gold-light: #d8bd86;
+  --color-gold-deep: #8c6c36;
+  --color-spa-blue: #6e93a8;
+  --color-spa-blue-tint: #dce8ed;
+  --color-stone: #8a8477;
 
-  --color-dbg: #0b1315;
-  --color-dbg-alt: #0f1a1d;
-  --color-dsurface: #142124;
-  --color-dtext: #ede7d9;
-  --color-dmuted: #a9a08c;
+  --color-dbg: #100e0c;
+  --color-dbg-alt: #17140f;
+  --color-dsurface: #1c1812;
+  --color-dtext: #f2ece1;
+  --color-dmuted: #b9ab93;
 
-  --font-display: "Instrument Serif", "Iowan Old Style", "Palatino Linotype", serif;
-  --font-body: "Sora", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", serif;
+  --font-body: "Manrope", "Segoe UI", system-ui, sans-serif;
 }
 
 @layer base {
@@ -28,10 +27,10 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-paper text-ink-soft dark:bg-dbg dark:text-dtext font-body antialiased;
+    @apply bg-marble text-ink-soft dark:bg-dbg dark:text-dtext font-body antialiased;
   }
   h1, h2, h3, h4 {
-    @apply font-display font-normal;
+    @apply font-display font-medium;
     text-wrap: balance;
   }
   section[id] {
@@ -52,7 +51,7 @@
 
 @layer components {
   .eyebrow {
-    @apply inline-flex items-center gap-2.5 font-body text-xs font-semibold tracking-[0.22em] uppercase text-brass-deep dark:text-brass-light;
+    @apply inline-flex items-center gap-2.5 font-body text-xs font-semibold tracking-[0.22em] uppercase text-gold-deep dark:text-gold-light;
   }
   .eyebrow::before {
     content: "";
@@ -60,20 +59,20 @@
   }
 
   .btn {
-    @apply inline-flex items-center justify-center gap-2.5 rounded-sm px-[30px] py-[15px] font-body text-[13px] font-semibold tracking-[0.06em] uppercase border cursor-pointer whitespace-nowrap transition-all duration-300 hover:-translate-y-0.5;
+    @apply inline-flex items-center justify-center gap-2.5 rounded-sm px-[30px] py-[15px] font-body text-[13px] font-semibold tracking-[0.08em] uppercase border cursor-pointer whitespace-nowrap transition-all duration-300 hover:-translate-y-0.5;
   }
-  .btn-brass {
-    @apply bg-brass border-brass text-[#1c1207] hover:bg-brass-deep hover:border-brass-deep dark:bg-brass-light dark:border-brass-light dark:hover:bg-brass dark:hover:border-brass;
+  .btn-gold {
+    @apply bg-gold border-gold text-[#fffaf1] hover:bg-gold-deep hover:border-gold-deep dark:bg-gold-light dark:border-gold-light dark:text-dsurface dark:hover:bg-gold dark:hover:border-gold;
   }
   .btn-line {
-    @apply bg-transparent border-ink/25 text-ink-soft hover:bg-ink hover:text-paper hover:border-ink dark:border-white/30 dark:text-dtext dark:hover:bg-dtext dark:hover:text-dsurface;
+    @apply bg-transparent border-white/50 text-white hover:bg-white/10 hover:border-white;
   }
-  .btn-ghost {
-    @apply bg-transparent border-white/45 text-white hover:bg-white/10 hover:border-white;
+  .btn-ink {
+    @apply bg-transparent border-ink/10 text-ink-soft hover:bg-ink hover:text-marble hover:border-ink dark:border-gold-light/20 dark:text-dtext dark:hover:bg-dtext dark:hover:text-dsurface;
   }
 
   .pill {
-    @apply inline-flex items-center gap-2 border border-ink/12 dark:border-white/15 px-4 py-2.5 text-[12.5px] tracking-wide text-stone dark:text-dmuted;
+    @apply inline-flex items-center gap-2 border border-ink/10 dark:border-gold-light/20 px-4 py-2.5 text-[12.5px] tracking-wide text-stone dark:text-dmuted;
   }
 
   .reveal {
@@ -84,7 +83,7 @@
   }
 }
 
-@keyframes soft-rise {
-  from { opacity: 0; transform: translateY(14px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes hero-zoom {
+  from { transform: scale(1.06); }
+  to { transform: scale(1); }
 }
